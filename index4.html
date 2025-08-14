@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roh website</title>
     <link rel="stylesheet" href="style3.css">
+    <script src="https://kit.fontawesome.com/f43588ea7a.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="header">
@@ -41,13 +42,27 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum suscipit dolorum numquam maxime, a repudiandae
                     consequatur aspernatur voluptate excepturi fugit tempora sint iure nisi eum nostrum rem pariatur aperiam neque?</p>
                 <div class="tab-titles">
-                    <p class="tab-links active-link">Skills</p>
-                    <p class="tab-links">Experience</p>
-                    <p class="tab-links">Education</p>
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
                 </div>
-                <div class="tab-contents">
+                <div class="tab-contents active-tab" id="skills">
                     <ul>
                         <li><span>SDE</span><br>Software Engineer</li>
+                        <li><span>SDE</span><br>Software Engineer</li>
+                        <li><span>SDE</span ><br>Software Engineer</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>expr</span><br>Software Engineer</li>
+                        <li><span>SDE</span><br>Software Engineer</li>
+                        <li><span>SDE</span><br>Software Engineer</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>edu</span><br>Software Engineer</li>
                         <li><span>SDE</span><br>Software Engineer</li>
                         <li><span>SDE</span><br>Software Engineer</li>
                     </ul>
@@ -56,6 +71,87 @@
         </div>
     </div>
 </div>
-    
+
+<!-----services-->
+<div id="services"></div>
+<div class="container">
+    <h1 class="sub-title">My services</h1>
+    <div class="services-list">
+        <div>
+            <i class="fa-solid fa-code"></i>
+            <h2>Web Design</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis labore quas sit sed, quisquam vero dolores iure
+                repellat, a odio illum distinctio repellendus quidem atque? Deserunt earum dignissimos fugiat quam.</p>
+            <a href="#">Learn more</a>
+        </div> 
+        <div>
+            <i class="fa-solid fa-crop-simple"></i>
+            <h2>Web Design</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis labore quas sit sed, quisquam vero dolores iure
+                repellat, a odio illum distinctio repellendus quidem atque? Deserunt earum dignissimos fugiat quam.</p>
+            <a href="#">Learn more</a>
+        </div>
+        <div>
+            <i class="fa-brands fa-app-store"></i>
+            <h2>Web Design</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis labore quas sit sed, quisquam vero dolores iure
+                repellat, a odio illum distinctio repellendus quidem atque? Deserunt earum dignissimos fugiat quam.</p>
+            <a href="#">Learn more</a>
+        </div>
+    </div>
+</div>
+
+<!----portfolio---->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/logo.jpg" alt="">
+                <div class="layer">
+                    <h3>AI Resume Generator</h3>
+                    <p>A smart, full-stack application built with React and Spring Boot that leverages AI to create personalized,
+                        professional resumes in seconds. It streamlines the resume-building process with intuitive UI, dynamic templates,
+                        and tailored content suggestions.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/logo.jpg" alt="">
+                <div class="layer">
+                    <h3>Weather Forecast</h3>
+                    <p>A user-friendly application built with Flutter that delivers real-time weather updates, detailed forecasts, and
+                        location-based insights, ensuring accurate and timely information for daily planning.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/logo.jpg" alt="">
+                <div class="layer">
+                    <h3>CWC-2023 Website</h3>
+                    <p>An interactive web platform built with HTML, CSS, and JavaScript to provide schedules, scores, team stats, and
+                        highlights for the 2023 Cricket World Cup, offering fans a seamless and engaging tournament experience.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+         for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
 </body>
 </html>
