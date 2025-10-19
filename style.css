@@ -16,10 +16,9 @@ body{
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url(images/cine_pic.jpg);
+    background-image: url(images/cine1.jpg);
     background-size: cover;
     background-position: center;
-
 }
 
 .container{ 
@@ -30,10 +29,12 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap:wrap ;
+    flex-wrap: wrap;
+    padding: 20px 0;
 }
 .logo{
     width: 140px;
+    height: auto;
 }
 
 nav ul li{
@@ -64,18 +65,39 @@ nav ul li a:hover::after{
     width: 100%;
 }
 
-.header-text{
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10%;
+    gap: 40px;
+}
+
+.header-text {
     margin-top: 20%;
     font-size: 30px;
 }
 
-.header-text h1{
+.header-text h1 {
     font-size: 60px;
     margin-top: 20px;
 }
 
-.header-text h1 span{
+.header-text h1 span {
     color: red;
+}
+
+.header-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
 }
 
 
@@ -177,21 +199,30 @@ nav ul li a:hover::after{
 
 }
 .services-list div h2{
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 500;
-    margin-bottom: 15px;
+    display: inline-block;
+    margin-right: 20px;
 }
 
 .services-list div a{
     text-decoration: none;
     color: #fff;
-    font-size: 12px;
-    margin-top: 20px;
-    display: inline-block ;
+    font-size: 24px;
+    display: inline-block;
+    background: #ff004f;
+    padding: 8px 20px;
+    border-radius: 6px;
+    transition: transform 0.3s, background 0.3s;
 }
 .services-list div:hover{
-    background: red;
+    background: #333;
     transform: translateY(-10px);
+}
+
+.services-list div a:hover{
+    background: red;
+    transform: translateY(-3px);
 }
 
 /*portfolio---*/
@@ -211,12 +242,15 @@ nav ul li a:hover::after{
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    height: 300px;
 }
 .work img{
     width: 100%;
+    height: 100%;
     border-radius: 10px;
     display: block;
-    transition:  transform 0.5s;
+    transition: transform 0.5s;
+    object-fit: cover;
 }
 
 .layer{
@@ -260,6 +294,15 @@ nav ul li a:hover::after{
     text-align: center;
     background: rgba(255,255,255,0.1);
     transition: all 0.3s ease;
+}
+
+/* Games Section */
+#games {
+    padding: 50px 0;
+}
+#games .fa-gamepad {
+    font-size: 24px;
+    color: #fff;
 }
 .layer a:hover {
     background: rgba(255,255,255,0.2);
@@ -372,15 +415,30 @@ nav .fas{
 }
 
 @media only screen and (max-width:600px){
-    #header{
-        background-image: url(images/photome.jpeg);
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 20%;
     }
-    .header-text{
-        margin-top: 100%;
-        font-size:16px
+    
+    .header-text {
+        margin-top: 0;
+        font-size: 16px;
+        order: 2;
     }
-    .header-text h1{
+    
+    .header-text h1 {
         font-size: 30px;
+    }
+    
+    .header-image {
+        order: 1;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    
+    .header-image img {
+        max-width: 80%;
     }
      nav .fas{
         display: block;
